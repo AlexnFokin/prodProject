@@ -1,8 +1,10 @@
 .app.default {
-  --bg-color: #fff;
+  --bg-color: #f6f8fa;
   --bg-color-accent: #f6f8fa;
+  --bg-color-sidebar: #fff;
+  --bg-color-header: #24292f;
   --primary-color: #24292f;
   --secondary-color: #6e767e;
   --accent-color: #3178c6;
-  --inverted-bg-color: #0d1117;
+  --link-hover-color: rgba(205, 217, 229, .9);
 }

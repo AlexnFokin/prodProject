@@ -1,3 +1,12 @@
 .navbar {
-  background-color: var(--inverted-bg-color);
+  background-color: var(--bg-color-header);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: flex-end;
+
+  a {
+    margin-left: 15px;
+  }
 }
