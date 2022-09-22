@@ -2,15 +2,17 @@
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 1px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
   &:hover {
     color: var(--link-hover-color);
   }
 }
+
 .primary {
   color: var(--primary-color);
-
 }
+
 .secondary {
   color: var(--secondary-color);
 }

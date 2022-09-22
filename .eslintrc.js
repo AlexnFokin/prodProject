@@ -21,6 +21,7 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    "i18next"
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -39,7 +40,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     "@typescript-eslint/strict-boolean-expressions": "warn",
-    "@typescript-eslint/explicit-function-return-type": "warn"
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "i18next/no-literal-string": ['error', {markupOnly: true}]
   },
   globals: {
     __IS_DEV__: true,

@@ -1,12 +1,13 @@
 @import "reset";
-@import './variables/global';
+@import "./variables/global";
 @import "./themes/dark";
-@import './themes/default';
+@import "./themes/default";
 
 .content-page {
   display: flex;
   height: calc(100vh - var(--header-height));
 }
+
 .page--wrapper {
   flex-grow: 1;
   background-color: var(--bg-color);

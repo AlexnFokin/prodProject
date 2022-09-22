@@ -1,14 +1,14 @@
 .Sidebar {
-
   width: var(--sidebar-width);
   background-color: var(--bg-color-sidebar);
   position: relative;
   height: 100%;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   display: flex;
 }
+
 .collapsed {
-  width: var(--sidebar-width-collapsed)
+  width: var(--sidebar-width-collapsed);
 }
 
 .switcher {
