@@ -43,7 +43,8 @@ module.exports = {
     "@typescript-eslint/strict-boolean-expressions": "warn",
     "@typescript-eslint/explicit-function-return-type": "warn",
     "i18next/no-literal-string": ['error', {markupOnly: true}],
-    "max-len": ['error', {"ignoreComments": true}]
+    "max-len": ['error', {"ignoreComments": true}],
+    "@typescript-eslint/naming-convention": "warn"
   },
   globals: {
     __IS_DEV__: true,
