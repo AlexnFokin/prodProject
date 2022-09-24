@@ -9,4 +9,9 @@
   border: none;
   outline: none;
   background: none;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    opacity: .7;
+  }
 }

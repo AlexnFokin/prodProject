@@ -2,5 +2,10 @@
   "Тестовый пример": "test example",
   "Перевод": "Translate",
   "Добро пожаловать": "Welcome",
-  "Язык": "English"
+  "Язык": "English",
+  "Запрашиваемая страница не найдена": "The requested page was not found",
+  "скрыть": "hide",
+  "показать": "show",
+  "Главная": "Home",
+  "О сайте": "About"
 }

@@ -9,7 +9,7 @@
     "build:dev": "npx webpack --env port=3000 mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\" ",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-    "lint:scsss": "stylelint \"**/*.scss\" ",
+    "lint:scss": "stylelint \"**/*.scss\" ",
     "lint:scss:fix": "stylelint \"**/*.scss\" --fix",
     "unit": "jest --config ./config/jest/jest.config.ts"
   },
