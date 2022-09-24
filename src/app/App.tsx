@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 import React, { Suspense } from 'react'
 import './styles/index.scss'
 
