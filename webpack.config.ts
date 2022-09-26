@@ -4,9 +4,9 @@ import { BuildEnv, BuildPaths } from './config/build/types/config'
 import path from 'path'
 
 const paths: BuildPaths = {
-  entry: path.resolve(__dirname, 'src', 'PageError.tsx'),
+  entry: path.resolve(__dirname, 'src', 'index.tsx'),
   build: path.resolve(__dirname, 'build'),
-  html: path.resolve(__dirname, 'public', 'pageError.html'),
+  html: path.resolve(__dirname, 'public', 'index.html'),
   src: path.resolve(__dirname, 'src')
 }
 
