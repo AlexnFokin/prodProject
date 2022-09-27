@@ -8,8 +8,6 @@ module.exports = {
     'plugin:react/recommended',
     'standard-with-typescript'
   ],
-  overrides: [
-  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     "project": ["tsconfig.json"],
@@ -28,7 +26,7 @@ module.exports = {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     indent: [2, 2],
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+    'react/jsx-filename-extension': [2, {extensions: ['.js', '.jsx', '.tsx']}],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'warn',
@@ -42,11 +40,25 @@ module.exports = {
     'no-underscore-dangle': 'off',
     "@typescript-eslint/strict-boolean-expressions": "warn",
     "@typescript-eslint/explicit-function-return-type": "warn",
-    "i18next/no-literal-string": ['error', {markupOnly: true}],
+    "i18next/no-literal-string": [
+      'error',
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to']
+      }
+    ],
     "max-len": ['error', {"ignoreComments": true, code: 100}],
     "@typescript-eslint/naming-convention": "warn"
   },
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    }
+  ]
 }
