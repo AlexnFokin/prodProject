@@ -15,3 +15,10 @@
     opacity: .7;
   }
 }
+
+.outline {
+  padding: 10px 20px;
+  background: none;
+  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+}

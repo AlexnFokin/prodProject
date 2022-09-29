@@ -21,6 +21,7 @@
   },
   "include": [
     "./config/jest/*",
+    "./config/build/*",
     "./src/**/*.ts",
     "./src/**/*.tsx"
   ]
