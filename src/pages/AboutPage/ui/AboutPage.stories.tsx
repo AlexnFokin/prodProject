@@ -4,6 +4,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProviders'
 import AboutPage from './AboutPage'
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
   title: 'pages/AboutPage',
   component: AboutPage,

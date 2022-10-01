@@ -4,10 +4,16 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:storybook/recommended'],
+  extends: [
+    'plugin:react/recommended',
+    "eslint:recommended",
+    'standard-with-typescript',
+    'plugin:storybook/recommended',
+    'plugin:i18next/recommended'
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    "project": ["tsconfig.json"],
+    "project": ["./tsconfig.json"],
     ecmaFeatures: {
       jsx: true
     },
@@ -33,6 +39,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     "@typescript-eslint/strict-boolean-expressions": "warn",
     "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/consistent-type-assertions": "warn",
     "i18next/no-literal-string": ['error', {
       markupOnly: true,
       ignoreAttribute: ['data-testid', 'to']

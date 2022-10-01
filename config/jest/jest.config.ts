@@ -9,13 +9,7 @@ export default {
   clearMocks: true,
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: [
-    '/node_modules/'
-  ],
-  moduleDirectories: [
-    'node_modules'
-  ],
-  modulePaths: [
-    '<rootDir>src'
+    '\\\\node_modules\\\\'
   ],
   moduleFileExtensions: [
     'js',
@@ -25,13 +19,20 @@ export default {
     'json',
     'node'
   ],
+  moduleDirectories: [
+    'node_modules'
+  ],
+  modulePaths: [
+    '<rootDir>src'
+  ],
   testMatch: [
+    // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
   ],
-  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   rootDir: '../../',
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleNameMapper: {
-    '\\.(s?css)$': 'identity-obj-proxy',
+    '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
   }
 
