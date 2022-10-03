@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { Button, ThemeButton } from 'shared/ui/Button/Button'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 
 describe('Button', () => {
   test('test button', () => {
@@ -9,7 +9,7 @@ describe('Button', () => {
   })
   test('test button with theme', () => {
     render(<Button
-      theme={ThemeButton.CLEAR}
+      theme={ButtonTheme.CLEAR}
       // eslint-disable-next-line i18next/no-literal-string
     >TEST</Button>)
     expect(screen.getByText('TEST')).toHaveClass('clear')

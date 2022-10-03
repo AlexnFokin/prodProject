@@ -1,6 +1,9 @@
 .Button {
   cursor: pointer;
   color: var(--primary-color);
+  padding: 6px 20px;
+  border-radius: 5px;
+  transition: all .2s ease-in-out;
 }
 
 .clear {
@@ -9,7 +12,6 @@
   border: none;
   outline: none;
   background: none;
-  transition: all .2s ease-in-out;
 
   &:hover {
     opacity: .7;
@@ -17,8 +19,46 @@
 }
 
 .outline {
-  padding: 10px 20px;
   background: none;
-  border-radius: 5px;
   border: 2px solid var(--primary-color);
+}
+
+.background {
+  background-color: var(--secondary-color);
+}
+
+.square {
+  padding: 0;
+
+  &.size_m {
+    width: var(--font-size-m);
+    height: var(--font-size-m);
+  }
+
+  &.size_l {
+    width: var(--font-size-l);
+    height: var(--font-size-l);
+  }
+
+  &.size_xl {
+    width: var(--font-size-xl);
+    height: var(--font-size-xl);
+  }
+}
+
+.size {
+  &_m {
+    font-size: var(--font-size-m);
+    line-height: var(--font-size-m);
+  }
+
+  &_l {
+    font-size: var(--font-size-l);
+    line-height: var(--font-size-l);
+  }
+
+  &_xl {
+    font-size: var(--font-size-xl);
+    line-height: var(--font-size-xl);
+  }
 }
