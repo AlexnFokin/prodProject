@@ -1,5 +1,10 @@
 @import "main";
 
+body {
+  font: var(--font-m);
+  color: var(--primary-color);
+}
+
 .app {
   font: var(--font-m);
   background-color: var(--bg-color);
