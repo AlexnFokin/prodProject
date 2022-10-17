@@ -1,6 +1,4 @@
-import {
-  AnyAction, combineReducers, Reducer, ReducersMapObject
-} from '@reduxjs/toolkit'
+import { AnyAction, combineReducers, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { ReducerManager, StateSchema, StateSchemaKey } from './StateSchema'
 
 export function createReducerManager (initialReducers: ReducersMapObject<StateSchema>): ReducerManager {
@@ -16,6 +14,7 @@ export function createReducerManager (initialReducers: ReducersMapObject<StateSc
       if (keysToRemove.length > 0) {
         state = { ...state }
         keysToRemove.forEach((key) => {
+          // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
           delete state[key]
         })
         keysToRemove = []
@@ -34,6 +33,7 @@ export function createReducerManager (initialReducers: ReducersMapObject<StateSc
       if (!key || !reducers[key]) {
         return
       }
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
       delete reducers[key]
       keysToRemove.push(key)
       combinedReducer = combineReducers(reducers)
