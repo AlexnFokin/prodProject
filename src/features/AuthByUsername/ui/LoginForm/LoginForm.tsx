@@ -5,7 +5,7 @@ import { Input } from 'shared/ui/Input/Input'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { useCallback } from 'react'
-import { LoginActions, LoginReducer } from '../../model/slice/LogiSlice'
+import { loginActions, loginReducer } from '../../model/slice/LoginSlice'
 import { loginByUsername } from '../../model/servicies/LoginByUsername/LoginByUsername'
 import { Text } from 'shared/ui/Text'
 import { TextTheme } from 'shared/ui/Text/ui/Text'
@@ -23,7 +23,7 @@ export interface LoginFormProps {
 }
 
 const initialReducers: ReducersList = {
-  loginForm: LoginReducer
+  loginForm: loginReducer
 }
 
 const LoginForm = (props: LoginFormProps) => {
@@ -38,11 +38,11 @@ const LoginForm = (props: LoginFormProps) => {
   const dispatch = useDispatch()
 
   const onChangeUsername = useCallback((value: string) => {
-    dispatch(LoginActions.setUsername(value))
+    dispatch(loginActions.setUsername(value))
   }, [dispatch])
 
   const onChangePassword = useCallback((value: string) => {
-    dispatch(LoginActions.setPassword(value))
+    dispatch(loginActions.setPassword(value))
   }, [dispatch])
 
   const onLoginClick = useCallback(() => {

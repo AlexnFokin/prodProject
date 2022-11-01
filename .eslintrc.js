@@ -51,7 +51,7 @@ module.exports = {
     }],
     "max-len": ['error', {
       "ignoreComments": true,
-      code: 120
+      code: 130
     }],
     "@typescript-eslint/naming-convention": "warn",
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
