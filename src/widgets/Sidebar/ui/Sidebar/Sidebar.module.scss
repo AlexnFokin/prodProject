@@ -24,15 +24,6 @@
 }
 
 .item {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-
-  .link {
-    margin-left: 10px;
-    opacity: 1;
-  }
-
   &__wrapper {
     margin-left: 10px;
     display: flex;
@@ -40,20 +31,10 @@
   }
 }
 
-.icon {
-  fill: var(--secondary-color);
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
 
   .switcher {
     flex-direction: column;
-  }
-
-  .link {
-    opacity: 0;
-    width: 0;
-    transition: all .2s ease-in-out;
   }
 }

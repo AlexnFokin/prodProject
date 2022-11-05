@@ -17,5 +17,6 @@
   "увеличить": "increment",
   "Форма авторизации": "Login form",
   "Вы ввели неверный логин или пароль": "Wrong login or password",
-  "Выйти": "Logout"
+  "Выйти": "Logout",
+  "Страница профиля": "Profile page"
 }

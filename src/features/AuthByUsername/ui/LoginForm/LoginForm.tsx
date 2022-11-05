@@ -3,7 +3,7 @@ import cls from './LoginForm.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Input } from 'shared/ui/Input/Input'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useCallback } from 'react'
 import { loginActions, loginReducer } from '../../model/slice/LoginSlice'
 import { loginByUsername } from '../../model/servicies/LoginByUsername/LoginByUsername'
@@ -17,9 +17,11 @@ import {
   DynamicModuleLoader,
   ReducersList
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 export interface LoginFormProps {
   className?: string
+  onSuccess?: () => void
 }
 
 const initialReducers: ReducersList = {
@@ -28,14 +30,14 @@ const initialReducers: ReducersList = {
 
 const LoginForm = (props: LoginFormProps) => {
   const { t } = useTranslation()
-  const { className } = props
+  const { className, onSuccess } = props
 
   const username = useSelector(getLoginUsername)
   const password = useSelector(getLoginPassword)
   const isLoading = useSelector(getLoginIsLoading)
   const error = useSelector(getLoginError)
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value))
@@ -45,9 +47,12 @@ const LoginForm = (props: LoginFormProps) => {
     dispatch(loginActions.setPassword(value))
   }, [dispatch])
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }))
-  }, [dispatch, username, password])
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }))
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess()
+    }
+  }, [onSuccess, dispatch, username, password])
 
   return (
 

@@ -26,6 +26,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "first": "Alex",
+    "lastname": "Fokin",
+    "age": 37,
+    "currency": "rub",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://yt3.ggpht.com/ytc/AMLnZu8_0xyD6foSNO-3SvwGzar8tx9pf1N7r1vMTY4c=s900-c-k-c0x00ffffff-no-rj"
   }
 }
