@@ -46,6 +46,7 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "warn",
     "@typescript-eslint/consistent-type-assertions": "warn",
     "react/display-name": "off",
+    "no-undef": "off",
     "i18next/no-literal-string": ['error', {
       markupOnly: true,
       ignoreAttribute: ['data-testid', 'to']

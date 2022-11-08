@@ -1,34 +1,33 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-import cls from './ProfileCard.module.scss'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData'
 import {
-  getLoginIsLoading
-} from 'features/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading'
+  getProfileIsLoading
+} from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading'
 import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError'
+import { Text } from 'shared/ui/Text'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
-import { Text } from 'shared/ui/Text'
+import cls from './ProfileCard.module.scss'
 
-interface profileCardProps {
+interface ProfileCardProps {
   className?: string
 }
 
-export const ProfileCard = (props: profileCardProps) => {
+export const ProfileCard = ({ className }: ProfileCardProps) => {
   const { t } = useTranslation('profile')
-  const { className } = props
   const data = useSelector(getProfileData)
-  const isLoading = useSelector(getLoginIsLoading)
+  const isLoading = useSelector(getProfileIsLoading)
   const error = useSelector(getProfileError)
+
   return (
-    <div className={classNames(cls.profileCard, {}, [className])}>
+    <div className={classNames(cls.ProfileCard, {}, [className])}>
       <div className={cls.header}>
-        <Text>
-          title={t('Профиль')}
-        </Text>
-        <Button theme={ButtonTheme.OUTLINE}
+        <Text title={t('Профиль')} />
+        <Button
           className={cls.editBtn}
+          theme={ButtonTheme.OUTLINE}
         >
           {t('Редактировать')}
         </Button>
@@ -41,10 +40,9 @@ export const ProfileCard = (props: profileCardProps) => {
         />
         <Input
           value={data?.lastname}
-          placeholder={t('Ваша Фамилия')}
+          placeholder={t('Ваша фамилия')}
           className={cls.input}
         />
-
       </div>
     </div>
   )

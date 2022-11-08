@@ -22,7 +22,7 @@ export function createReducerManager (initialReducers: ReducersMapObject<StateSc
       return combinedReducer(state, action)
     },
     add: (key: StateSchemaKey, reducer: Reducer) => {
-      if (!key || reducers[key]) {
+      if (!key || (reducers[key] != null)) {
         return
       }
       reducers[key] = reducer
@@ -30,7 +30,7 @@ export function createReducerManager (initialReducers: ReducersMapObject<StateSc
       combinedReducer = combineReducers(reducers)
     },
     remove: (key: StateSchemaKey) => {
-      if (!key || !reducers[key]) {
+      if (!key || (reducers[key] == null)) {
         return
       }
       // eslint-disable-next-line @typescript-eslint/no-dynamic-delete

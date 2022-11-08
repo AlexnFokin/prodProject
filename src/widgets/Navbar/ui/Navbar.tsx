@@ -28,7 +28,7 @@ export const Navbar = memo((props: NavbarProps) => {
 
   const { t } = useTranslation()
 
-  if (authData) {
+  if (authData != null) {
     return (
       <div className={classNames(cls.navbar, {}, [className])}>
         <Button

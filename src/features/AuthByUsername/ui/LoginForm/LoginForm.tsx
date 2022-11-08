@@ -50,7 +50,9 @@ const LoginForm = (props: LoginFormProps) => {
   const onLoginClick = useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }))
     if (result.meta.requestStatus === 'fulfilled') {
-      onSuccess()
+      if (onSuccess != null) {
+        onSuccess()
+      }
     }
   }, [onSuccess, dispatch, username, password])
 

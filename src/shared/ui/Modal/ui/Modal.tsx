@@ -1,6 +1,6 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import cls from './Modal.module.scss'
-import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import React, { MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { Portal } from 'shared/ui/Portal'
 import { useTheme } from 'app/providers/ThemeProvider'
 interface ModalProps {
@@ -22,7 +22,7 @@ export const Modal = (props: ModalProps) => {
   } = props
 
   const [isClosing, setIsClosing] = useState(false)
-  const timerRef = useRef<ReturnType<typeof setTimeout>>()
+  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export const Modal = (props: ModalProps) => {
   }, [isOpen])
 
   const closeHandler = useCallback(() => {
-    if (onClose) {
+    if (onClose != null) {
       setIsClosing(true)
       timerRef.current = setTimeout(() => {
         onClose()
@@ -62,7 +62,7 @@ export const Modal = (props: ModalProps) => {
   }, [isOpen, onKeyDown])
   const { theme } = useTheme()
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
     [cls[theme]]: true
