@@ -21,6 +21,12 @@
 .outline {
   background: none;
   border: 2px solid var(--primary-color);
+
+  &_red {
+    border-color: var(--color-error-red-light);
+    color: var(--color-error-red-dark);
+    background: none;
+  }
 }
 
 .background {
@@ -66,3 +72,4 @@
 .disabled {
   opacity: .5;
 }
+

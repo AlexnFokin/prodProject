@@ -1,14 +1,16 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 import { InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react'
+import { read } from 'fs'
 
-type HtMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HtMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>
 
 interface InputProps extends HtMLInputProps {
   className?: string
-  value?: string
+  value?: string | number
   onChange?: (value: string) => void
   autofocus?: boolean
+  readonly?: boolean
 
 }
 
@@ -20,6 +22,7 @@ export const Input = memo((props: InputProps) => {
     onChange,
     type = 'text',
     autofocus,
+    readonly,
     ...otherProps
   } = props
 
@@ -42,13 +45,19 @@ export const Input = memo((props: InputProps) => {
   const onFocus = () => {
     setIsFocused(true)
   }
+
+  const mods: Mods = {
+    [cls.readonly]: readonly
+  }
+
   return (
     <div>
       <input
-        className={classNames(cls.Input, {}, [className])}
+        className={classNames(cls.Input, mods, [className])}
         ref={ref}
         value={value}
         type={type}
+        readOnly={readonly}
         onFocus={onFocus}
         onBlur={onBlur}
         onChange={onChangeHandler}

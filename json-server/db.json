@@ -26,13 +26,13 @@
     }
   ],
   "profile": {
-    "first": "Alex",
-    "lastname": "Fokin",
-    "age": 37,
-    "currency": "rub",
+    "currency": "RUB",
     "country": "Russia",
+    "first": "alex",
+    "lastname": "Firsov",
+    "age": 37,
     "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://yt3.ggpht.com/ytc/AMLnZu8_0xyD6foSNO-3SvwGzar8tx9pf1N7r1vMTY4c=s900-c-k-c0x00ffffff-no-rj"
+    "username": "GM",
+    "avatar": "https://sun9-77.userapi.com/s/v1/ig2/JHdKWMdfyIirWKMD6QdzLEqlMqa6X3wqr4MGvU-2MehcCFFYnQzresraQm4FWHFOKJAJ-MDrSI-qD59W3WexiYwO.jpg?size=400x400&quality=95&crop=0,0,604,604&ava=1"
   }
 }

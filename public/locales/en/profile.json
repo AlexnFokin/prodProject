@@ -3,5 +3,15 @@
   "Редактировать": "Edit",
   "Ваше имя": "First name",
   "Ваша Фамилия": "Last name",
-  "Ваша фамилия": "Last name"
+  "Ваша фамилия": "Last name",
+  "Произошла ошибка при загрузке страницы профиля": "An error occurred while loading the profile page",
+  "Попрбуйте обновить страницу": "Try refreshing the page",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
+  "Ваш возраст": "Your age",
+  "Ваш город": "Your city",
+  "Ваша страна": "Your country",
+  "Ваш ник": "username",
+  "Ваш аватар": "Your avatar",
+  "Ваша валюта": "Your currency"
 }
