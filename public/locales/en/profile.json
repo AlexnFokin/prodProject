@@ -13,5 +13,10 @@
   "Ваша страна": "Your country",
   "Ваш ник": "username",
   "Ваш аватар": "Your avatar",
-  "Ваша валюта": "Your currency"
+  "Ваша валюта": "Your currency",
+  "неверно указана страна": "wrong country",
+  "некорректно введен возраст": "age entered incorrectly",
+  "Неверный имя или фамилия": "Invalid first or last name",
+  "Ошибка сервера": "Server error",
+  "нет данных": "no data"
 }
