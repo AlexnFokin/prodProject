@@ -48,7 +48,9 @@ const ProfilePage = (props: ProfilePageProps) => {
     [ValidateProfileError.INCORRECT_COUNTRY]: t('неверно указана страна')
   }
   useEffect(() => {
-    void dispatch(fetchProfileData())
+    if (__PROJECT__ !== 'storybook') {
+      void dispatch(fetchProfileData())
+    }
   }, [dispatch])
 
   const onChangeFirstname = useCallback((value?: string) => {

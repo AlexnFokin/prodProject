@@ -6,6 +6,7 @@ import { validateProfileData } from '../validateProfileData/validateProfileData'
 
 export const updateProfileData = createAsyncThunk<
 Profile,
+// eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 void,
 ThunkConfig<ValidateProfileError[]>
 >(

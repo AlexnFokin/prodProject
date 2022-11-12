@@ -6,15 +6,18 @@
   align-items: flex-start;
   min-height: 300px;
 }
+
 .avatarWrapper {
   display: flex;
   justify-content: center;
 }
+
 .input {
   margin-top: 10px;
 }
 
-.loading, .error {
+.loading,
+.error {
   display: flex;
   justify-content: center;
   align-items: center;

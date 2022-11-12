@@ -1,7 +1,6 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 import { InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react'
-import { read } from 'fs'
 
 type HtMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>
 

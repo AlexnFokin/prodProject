@@ -4,6 +4,9 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider'
 import ProfilePage from './ProfilePage'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
+import { Currency } from 'entities/Currency'
+import { Country } from 'entities/Country'
+import avatar from 'shared/assets/tests/avatar.png'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
@@ -15,10 +18,24 @@ export default {
 } as ComponentMeta<typeof ProfilePage>
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />
+const data = {
+  currency: Currency.RUB,
+  country: Country.Russia,
+  first: 'Alex',
+  lastname: 'Firsov',
+  age: 37,
+  city: 'Moscow',
+  username: 'GM',
+  avatar
+}
 
 export const Normal = Template.bind({})
 Normal.args = {}
-Normal.decorators = [StoreDecorator({})]
+Normal.decorators = [StoreDecorator({
+  profile: {
+    form: data
+  }
+})]
 export const Dark = Template.bind({})
 Dark.args = {}
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]

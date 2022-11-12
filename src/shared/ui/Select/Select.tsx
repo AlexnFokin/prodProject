@@ -1,6 +1,5 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import cls from './Select.module.scss'
-import { useTranslation } from 'react-i18next'
 import { ChangeEvent, memo, useMemo } from 'react'
 
 export interface SelectOptions {
@@ -18,7 +17,6 @@ interface SelectProps {
 }
 
 export const Select = memo((props: SelectProps) => {
-  const { t } = useTranslation()
   const mods: Mods = {}
   const {
     className,
