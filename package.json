@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "npx webpack serve --env port=3000",
+    "watch:dev": "concurrently \"npm:watch\" \"npm:start:dev:server\"",
     "start:dev:server": "node ./json-server/index.js",
     "build:prod": "npx webpack --env port=3000 mode=production",
     "build:dev": "npx webpack --env port=3000 mode=development",
@@ -34,7 +35,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.9",
     "@storybook/addon-actions": "6.4.19",
     "@storybook/addon-essentials": "6.4.19",
     "@storybook/addon-interactions": "6.4.19",
@@ -93,6 +94,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
     "axios": "^1.1.2",
+    "concurrently": "^7.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
