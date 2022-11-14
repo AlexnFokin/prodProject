@@ -11,17 +11,13 @@ export function useTheme (): UseThemeResult {
 
   const toggleTheme = () => {
     let newTheme: Theme
-    switch (theme) {
-    case Theme.DARK:
-        newTheme = Theme.GREEN
-      break
-    case Theme.GREEN:
+    if (theme === Theme.DARK) {
+      newTheme = Theme.GREEN
+    } else if (theme === Theme.GREEN) {
       newTheme = Theme.DEFAULT
-      break
-    case Theme.DEFAULT:
+    } else if (theme === Theme.DEFAULT) {
       newTheme = Theme.DARK
-      break
-    default:
+    } else {
       newTheme = Theme.DARK
     }
     setTheme?.(newTheme)
