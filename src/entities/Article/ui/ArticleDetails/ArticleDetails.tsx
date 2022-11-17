@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleDetails.module.scss'
 import { useTranslation } from 'react-i18next'
-import { memo, useEffect } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import { DynamicModuleLoader } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -12,8 +12,22 @@ import {
   getArticleDetailsError,
   getArticleDetailsIsLoading
 } from '../../model/selectors/articleDetails'
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text'
+import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
+import { Avatar } from 'shared/ui/Avatar/Avatar'
+import CalendarIcon from 'shared/assets/icons/calendar.svg'
+import EyeIcon from 'shared/assets/icons/eye.svg'
+import { Icon } from 'shared/ui/icon/Icon'
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article'
+import {
+  ArticleCodeBlockComponent
+} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
+import {
+  ArticleImageBlockComponent
+} from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
+import {
+  ArticleTextBlockComponent
+} from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent'
 
 interface ArticleDetailsProps {
   className?: string
@@ -30,22 +44,36 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const error = useSelector(getArticleDetailsError)
   const articleData = useSelector(getArticleDetailsData)
 
+  const rendeBlock = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+      case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block}/>
+      case ArticleBlockType.IMAGE:
+        return <ArticleImageBlockComponent key={block.id} className={cls.block} block={block}/>
+      case ArticleBlockType.TEXT:
+        return <ArticleTextBlockComponent key={block.id} className={cls.block} block={block}/>
+      default:
+        return null
+    }
+  }, [])
+
   const dispatch = useAppDispatch()
   useEffect(() => {
-    void dispatch(fetchArticleById(id))
+    if (__PROJECT__ !== 'storybook') {
+      void dispatch(fetchArticleById(id))
+    }
   }, [dispatch, id])
 
   let content
   if (isLoading) {
     content = (
-
-      <div>
+      <>
         <Skeleton className={cls.avatar} width={200} height={200} borderRadius={'50%'} />
         <Skeleton className={cls.title} width={'60%'} height={41} />
         <Skeleton className={cls.skeleton} width={'40%'} height={31} />
         <Skeleton className={cls.skeleton} width={'100%'} height={230} />
         <Skeleton className={cls.skeleton} width={'100%'} height={230} />
-      </div>
+      </>
     )
   } else if (error) {
     content = (
@@ -57,8 +85,21 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     )
   } else {
     content = (
-      // eslint-disable-next-line i18next/no-literal-string
-      <div>Article details</div>
+      <>
+        <div className={cls.avatarWrapper}>
+          <Avatar src={articleData?.img} size={200} className={cls.avatar}/>
+        </div>
+        <Text size={TextSize.L} title={articleData?.title} text={articleData?.subtitle}/>
+        <div className={cls.articleInfo}>
+          <Icon Svg={EyeIcon} className={cls.icon}/>
+          <Text text={String(articleData?.views)}/>
+        </div>
+        <div className={cls.articleInfo}>
+          <Icon Svg={CalendarIcon} className={cls.icon} />
+          <Text text={String(articleData?.createdAt)}/>
+        </div>
+        {articleData?.blocks.map(rendeBlock)}
+      </>
     )
   }
 
