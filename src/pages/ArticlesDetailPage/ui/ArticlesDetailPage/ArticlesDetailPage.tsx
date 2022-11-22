@@ -21,9 +21,13 @@ import {
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import {
   fetchCommentsByArticleId
-} from 'pages/ArticlesDetailPage/model/servicies/fetchCommentsByArticleId/fetchCommentsByArticleId'
+} from '../../model/servicies/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { memo } from 'react'
+import { memo, useCallback } from 'react'
+import AddCommentForm from 'features/AddCommentForm/ui/AddCommentForm/AddCommentForm'
+import {
+  addCommentsForArticle
+} from '../../model/servicies/addCommentsForArticle/addCommentsForArticle'
 
 interface ArticlesDetailPageProps {
   className?: string
@@ -43,6 +47,11 @@ const ArticlesDetailPage = (props: ArticlesDetailPageProps) => {
   useInitialEffect(() => {
     void dispatch(fetchCommentsByArticleId(id))
   })
+
+  const onSendComment = useCallback((text: string) => {
+    void dispatch(addCommentsForArticle(text))
+  }, [dispatch])
+
   if (!id) {
     return <div className={classNames(cls.ArticlesDetailPage, {}, [className])}>
       {t('Статья не найдена')}
@@ -61,6 +70,7 @@ const ArticlesDetailPage = (props: ArticlesDetailPageProps) => {
       <div className={classNames(cls.ArticlesDetailPage, {}, [className])}>
         <ArticleDetails id={id}/>
         <Text title={t('Комментарии')} className={cls.commentsTitle} />
+        <AddCommentForm onSendComment={onSendComment}/>
         <CommentList
           isLoading={isLoading}
           comments={comments}/>

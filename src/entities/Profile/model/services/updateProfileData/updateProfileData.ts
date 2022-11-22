@@ -23,7 +23,8 @@ ThunkConfig<ValidateProfileError[]>
     }
 
     try {
-      const response = await extra.api.put<Profile>('/profile', formData)
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      const response = await extra.api.put<Profile>(`/profile/${formData?.id}`, formData)
 
       if (!response.data) {
         throw new Error()

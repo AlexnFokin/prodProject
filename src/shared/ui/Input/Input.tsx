@@ -50,19 +50,18 @@ export const Input = memo((props: InputProps) => {
   }
 
   return (
-    <div>
-      <input
-        className={classNames(cls.Input, mods, [className])}
-        ref={ref}
-        value={value}
-        type={type}
-        readOnly={readonly}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onChange={onChangeHandler}
-        {...otherProps}
-      />
-    </div>
+
+    <input
+      className={classNames(cls.Input, mods, [className])}
+      ref={ref}
+      value={value}
+      type={type}
+      readOnly={readonly}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onChange={onChangeHandler}
+      {...otherProps}
+    />
 
   )
 }
