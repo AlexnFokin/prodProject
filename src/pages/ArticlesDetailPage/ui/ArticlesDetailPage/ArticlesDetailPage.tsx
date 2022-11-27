@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticlesDetailPage.module.scss'
 import { useTranslation } from 'react-i18next'
 import { ArticleDetails } from 'entities/Article'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { CommentList } from 'entities/Comment'
 import {
@@ -28,6 +28,8 @@ import AddCommentForm from 'features/AddCommentForm/ui/AddCommentForm/AddComment
 import {
   addCommentsForArticle
 } from '../../model/servicies/addCommentsForArticle/addCommentsForArticle'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { RoutePath } from 'shared/config/routerConfig/routerConfig'
 
 interface ArticlesDetailPageProps {
   className?: string
@@ -47,6 +49,10 @@ const ArticlesDetailPage = (props: ArticlesDetailPageProps) => {
   useInitialEffect(() => {
     void dispatch(fetchCommentsByArticleId(id))
   })
+  const navigate = useNavigate()
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath.articles)
+  }, [navigate])
 
   const onSendComment = useCallback((text: string) => {
     void dispatch(addCommentsForArticle(text))
@@ -68,6 +74,12 @@ const ArticlesDetailPage = (props: ArticlesDetailPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
       <div className={classNames(cls.ArticlesDetailPage, {}, [className])}>
+        <Button
+          onClick={onBackToList}
+          theme={ButtonTheme.CLEAR}
+        >
+          {t('К списку статей')}
+        </Button>
         <ArticleDetails id={id}/>
         <Text title={t('Комментарии')} className={cls.commentsTitle} />
         <AddCommentForm onSendComment={onSendComment}/>

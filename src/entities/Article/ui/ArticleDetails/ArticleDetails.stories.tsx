@@ -22,7 +22,10 @@ const article: Article = {
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
-  // @ts-expect-error
+  user: {
+    id: '1',
+    username: 'alex master'
+  },
   createdAt: '26.02.2022',
   type: [ArticleType.IT],
   blocks: [

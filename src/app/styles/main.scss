@@ -17,9 +17,9 @@
   flex-grow: 1;
   background-color: var(--bg-color);
   color: var(--primary-color);
-  padding-right: 15px;
-  padding-left: 40px;
+  padding: 20px 25px 0;
   height: calc(100vh - var(--header-height));
   overflow-y: auto;
-  width: 100%;
+  width: calc(100% - var(--sidebar-width));
+  overflow-x: hidden;
 }
