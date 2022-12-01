@@ -30,6 +30,7 @@ import {
 } from '../../model/servicies/addCommentsForArticle/addCommentsForArticle'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { RoutePath } from 'shared/config/routerConfig/routerConfig'
+import { Page } from 'shared/ui/Page/Page'
 
 interface ArticlesDetailPageProps {
   className?: string
@@ -59,21 +60,21 @@ const ArticlesDetailPage = (props: ArticlesDetailPageProps) => {
   }, [dispatch])
 
   if (!id) {
-    return <div className={classNames(cls.ArticlesDetailPage, {}, [className])}>
+    return <Page className={classNames(cls.ArticlesDetailPage, {}, [className])}>
       {t('Статья не найдена')}
-    </div>
+    </Page>
   }
   if (error) {
     return (
-      <div className={classNames(cls.ArticlesDetailPage, {}, [className])}>
+      <Page className={classNames(cls.ArticlesDetailPage, {}, [className])}>
         <Text title={t('произошла ошибка')} theme={TextTheme.ERROR}/>
-      </div>
+      </Page>
     )
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-      <div className={classNames(cls.ArticlesDetailPage, {}, [className])}>
+      <Page className={classNames(cls.ArticlesDetailPage, {}, [className])}>
         <Button
           onClick={onBackToList}
           theme={ButtonTheme.CLEAR}
@@ -86,7 +87,7 @@ const ArticlesDetailPage = (props: ArticlesDetailPageProps) => {
         <CommentList
           isLoading={isLoading}
           comments={comments}/>
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }
