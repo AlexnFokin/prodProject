@@ -9,10 +9,12 @@ import { ArticleDetailsSchema } from 'entities/Article'
 import { ArticleDetailsCommentsSchema } from 'pages/ArticlesDetailPage'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
 import { ArticlesPageSchema } from 'pages/ArticlesPage'
+import { ScrollPositionSchema } from 'features/ScrollPosition'
 
 export interface StateSchema {
   counter: CounterSchema
   User: UserSchema
+  scroll: ScrollPositionSchema
   loginForm?: LoginSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema

@@ -5,6 +5,7 @@ import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
 import { CombinedState } from 'redux'
+import { ScrollPositionReducer } from 'features/ScrollPosition'
 
 export function createReduxStore (
   initialState?: StateSchema,
@@ -13,7 +14,8 @@ export function createReduxStore (
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
-    User: userReducer
+    User: userReducer,
+    scroll: ScrollPositionReducer
   }
 
   const reducerManager = createReducerManager(rootReducers)
