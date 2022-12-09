@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ArticleListItem } from './ArticleListItem'
 
 export default {
-  title: 'shared/ArticleListItem',
+  title: 'enteties/ArticleListItem',
   component: ArticleListItem,
   argTypes: {
     backgroundColor: { control: 'color' }

@@ -2,5 +2,17 @@
   "Статья не найдена": "Article not found",
   "Комментарии": "Comments",
   "произошла ошибка": "An error has occurred",
-  "К списку статей": "To articles list"
+  "К списку статей": "To articles list",
+  "Сортировать по": "Sort by",
+  "Поиск": "Search",
+  "возрастанию": "ascending",
+  "убыванию": "descending",
+  "по": "by",
+  "названию": "title",
+  "просмотрам": "views",
+  "дате создания": "Created at",
+  "Все": "All",
+  "Наука": "Science",
+  "Экономика": "Economic",
+  "АйТи": "IT"
 }

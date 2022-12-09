@@ -8,6 +8,7 @@ jest.mock('../fetchArticlesList/fetchArticlesList')
 describe('fetchNextArticlesPage.test', () => {
   test('success', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
+      // @ts-expect-error
       articlesPage: {
         page: 2,
         ids: [],
@@ -25,6 +26,7 @@ describe('fetchNextArticlesPage.test', () => {
   })
   test('fetch not called', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
+      // @ts-expect-error
       articlesPage: {
         page: 2,
         ids: [],
