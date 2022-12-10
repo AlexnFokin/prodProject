@@ -47,9 +47,10 @@ module.exports = {
     "@typescript-eslint/consistent-type-assertions": "warn",
     "react/display-name": "off",
     "no-undef": "off",
+    "arrow-body-style": "off",
     "i18next/no-literal-string": ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to']
+      ignoreAttribute: ['data-testid', 'to', 'target']
     }],
     "max-len": ['error', {
       "ignoreComments": true,

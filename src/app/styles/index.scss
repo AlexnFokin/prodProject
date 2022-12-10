@@ -11,3 +11,16 @@ body {
   color: var(--primary-color);
   min-height: 100vh;
 }
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--article_card_bg);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--bg-color-muted);
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+}

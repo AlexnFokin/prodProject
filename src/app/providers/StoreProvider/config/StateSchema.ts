@@ -6,7 +6,7 @@ import { CombinedState } from 'redux'
 import { ProfileSchema } from 'entities/Profile'
 import { AxiosInstance } from 'axios'
 import { ArticleDetailsSchema } from 'entities/Article'
-import { ArticleDetailsCommentsSchema } from 'pages/ArticlesDetailPage'
+import { ArticlesDetailsPageSchema } from 'pages/ArticlesDetailPage'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
 import { ArticlesPageSchema } from 'pages/ArticlesPage'
 import { ScrollPositionSchema } from 'features/ScrollPosition'
@@ -18,9 +18,9 @@ export interface StateSchema {
   loginForm?: LoginSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
-  articleDetailsComments?: ArticleDetailsCommentsSchema
   addCommentForm?: AddCommentFormSchema
   articlesPage?: ArticlesPageSchema
+  articleDetailsPage?: ArticlesDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
