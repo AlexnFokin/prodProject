@@ -6,6 +6,9 @@ import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/User'
+import { Text, TextTheme } from 'shared/ui/Text/Text'
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import { RoutePath } from 'shared/config/routerConfig/routerConfig'
 
 interface NavbarProps {
   className?: string
@@ -31,6 +34,18 @@ export const Navbar = memo((props: NavbarProps) => {
   if (authData != null) {
     return (
       <div className={classNames(cls.navbar, {}, [className])}>
+        <Text
+          className={cls.appName}
+          title={t('Alex App')}
+          theme={TextTheme.PRIMARY}
+        ></Text>
+        <AppLink
+          className={cls.createBtn}
+          to={RoutePath.article_create}
+          theme={AppLinkTheme.PRIMARY}
+        >
+          {t('Создать статью')}
+        </AppLink>
         <Button
           theme={ButtonTheme.OUTLINE}
           size={ButtonSize.M}

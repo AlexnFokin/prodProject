@@ -1,4 +1,4 @@
-import { MutableRefObject, useCallback, useRef } from 'react'
+import { useCallback, useRef } from 'react'
 
 export function useDebounce (callback: (...args: any[]) => void, delay: number) {
   const timer = useRef()
@@ -9,6 +9,7 @@ export function useDebounce (callback: (...args: any[]) => void, delay: number) 
     }
     // @ts-expect-error
     timer.current = setTimeout(() => {
+      // eslint-disable-next-line n/no-callback-literal
       callback(...args)
     }, delay)
   }, [callback, delay])

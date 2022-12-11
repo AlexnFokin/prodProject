@@ -11,10 +11,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useSelector } from 'react-redux'
 import {
-  getArticlesPageError,
-  getArticlesPageHasMore,
   getArticlesPageIsLoading,
-  getArticlesPageNum,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
 import { Page } from 'widgets/Page/Page'
@@ -24,6 +21,7 @@ import {
 import { initArticlesPage } from '../../model/servicies/initArticlesPage/initArticlesPage'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import { useSearchParams } from 'react-router-dom'
+
 interface ArticlesPageProps {
   className?: string
 }
@@ -37,10 +35,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const dispatch = useAppDispatch()
   const articles = useSelector(getArticles.selectAll)
   const isLoading = useSelector(getArticlesPageIsLoading)
-  const error = useSelector(getArticlesPageError)
   const view = useSelector(getArticlesPageView)
-  const page = useSelector(getArticlesPageNum)
-  const hasMore = useSelector(getArticlesPageHasMore)
   const [searchParams] = useSearchParams()
 
   useInitialEffect(() => {

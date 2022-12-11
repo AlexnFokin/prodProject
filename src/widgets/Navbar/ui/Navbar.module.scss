@@ -4,9 +4,18 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  justify-content: flex-end;
+  justify-content: space-between;
 
   a {
     margin-left: 15px;
   }
+}
+
+.appName {
+  width: var(--sidebar-width);
+  margin-left: 15px;
+}
+
+.createBtn {
+  margin-right: auto;
 }
