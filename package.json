@@ -6,8 +6,8 @@
   "scripts": {
     "watch": "npx webpack serve --env port=3000",
     "watch:dev": "concurrently \"npm:watch\" \"npm:start:dev:server\"",
-    "start:dev:server": "node ./json-server/index.js",
-    "build:prod": "npx webpack --env port=3000 mode=production",
+    "start:dev:server": "node ../server/index.js",
+    "build:prod": "npx webpack --env port=3000 mode=production apiUrl=https://serverprod.vercel.app/artcles",
     "build:dev": "npx webpack --env port=3000 mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\" ",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
@@ -58,6 +58,7 @@
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "babel-loader": "^8.2.3",
     "babel-plugin-i18next-extract": "^0.8.3",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.6.0",
     "eslint": "8.22.0",
     "eslint-config-airbnb": "^19.0.4",
