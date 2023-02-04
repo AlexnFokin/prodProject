@@ -73,9 +73,17 @@ DarkSizeL.args = {
   size: TextSize.L
 }
 
+export const DarkSizeS = Template.bind({})
+DarkSizeS.args = {
+  title: 'title',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi deserunt dolorem doloremque earum facilis iusto obcaecati odit sint vitae.',
+  size: TextSize.S
+}
+
 Dark.decorators = [ThemeDecorator(Theme.DARK)]
 DarkSizeM.decorators = [ThemeDecorator(Theme.DARK)]
 DarkSizeL.decorators = [ThemeDecorator(Theme.DARK)]
+DarkSizeS.decorators = [ThemeDecorator(Theme.DARK)]
 OnlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)]
 OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)]
 ErrorDark.decorators = [ThemeDecorator(Theme.DARK)]
