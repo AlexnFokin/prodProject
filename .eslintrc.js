@@ -24,7 +24,8 @@ module.exports = {
     'react',
     '@typescript-eslint',
     "i18next",
-    "react-hooks"
+    "react-hooks",
+    "alex-plugin-prod-path"
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -50,7 +51,7 @@ module.exports = {
     "arrow-body-style": "off",
     "i18next/no-literal-string": ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'target']
+      ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap']
     }],
     "max-len": ['error', {
       "ignoreComments": true,
@@ -60,7 +61,8 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
     "no-param-reassign": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "alex-plugin-prod-path/path-checker": "error"
   },
   globals: {
     __IS_DEV__: true,

@@ -7,6 +7,7 @@ import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import { useSelector } from 'react-redux'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
+import { VStack } from 'shared/ui/Stack/VStack/VStack'
 
 interface SidebarProps {
   className?: string
@@ -36,9 +37,9 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       }
     >
       <div className={cls.item__wrapper}>
-        <div className={cls.item}>
+        <VStack gap='4' className={cls.item}>
           {itemsList}
-        </div>
+        </VStack>
       </div>
       <div className={cls.switcher}>
         <ThemeSwitcher/>

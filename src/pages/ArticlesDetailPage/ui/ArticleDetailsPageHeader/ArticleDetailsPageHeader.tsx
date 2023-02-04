@@ -23,6 +23,7 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
   }, [navigate])
 
   const onEditArticle = useCallback(() => {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     navigate(`${RoutePath.articles_detail}${articleId}/edit`)
   }, [articleId, navigate])
   const canEdit = useSelector(getCanEditArticle)
