@@ -4,9 +4,6 @@ interface UseHoverBind {
   onMouseEnter: () => void
   onMouseLeave: () => void
 }
-
-type UseHoverResult = [boolean, UseHoverBind]
-
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const useHover = <T extends object>() => {
   const [isHover, setIsHover] = useState(false)

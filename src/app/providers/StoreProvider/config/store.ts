@@ -6,6 +6,7 @@ import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
 import { CombinedState } from 'redux'
 import { ScrollPositionReducer } from 'features/ScrollPosition'
+import { rtkApi } from 'shared/api/rtkApi'
 
 export function createReduxStore (
   initialState?: StateSchema,
@@ -15,7 +16,8 @@ export function createReduxStore (
     ...asyncReducers,
     counter: counterReducer,
     User: userReducer,
-    scroll: ScrollPositionReducer
+    scroll: ScrollPositionReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer
   }
 
   const reducerManager = createReducerManager(rootReducers)
@@ -29,7 +31,7 @@ export function createReduxStore (
           api: $api
         }
       }
-    })
+    }).concat(rtkApi.middleware)
   })
   // @ts-expect-error
   store.reducerManager = reducerManager

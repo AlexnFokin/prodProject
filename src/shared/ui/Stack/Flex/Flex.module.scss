@@ -5,18 +5,23 @@
 .justifyStart {
   justify-content: start;
 }
+
 .justifyEnd {
   justify-content: end;
 }
+
 .justifyCenter {
   justify-content: center;
 }
+
 .justifyBetween {
   justify-content: space-between;
 }
+
 .justifyEvenly {
   justify-content: space-between;
 }
+
 .justifyAround {
   justify-content: space-around;
 }
@@ -24,9 +29,11 @@
 .alignStart {
   align-items: start;
 }
+
 .alignEnd {
   align-items: end;
 }
+
 .alignCenter {
   align-items: center;
 }
@@ -40,7 +47,7 @@
 }
 
 .gap4 {
-gap: 4px;
+  gap: 4px;
 }
 
 .gap8 {

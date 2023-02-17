@@ -12,6 +12,7 @@ const ArticleEditPage = memo(() => {
   return (
     <Page className={classNames('', {}, [])}>
       {isEdit
+        // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
         ? t('Редактирование статьи с id ') + id
         : t('Создание новой статьи')}
     </Page>
