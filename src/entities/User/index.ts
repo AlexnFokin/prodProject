@@ -4,9 +4,12 @@ export {
 }
   from './model/slice/userSlice'
 
+export { getUserRoles, isUserAdmin, isUserManager } from './model/selectors/roleSelectors'
+
 export {
   UserSchema,
-  User
+  User,
+  UserRole
 }
   from './model/types/user'
 
