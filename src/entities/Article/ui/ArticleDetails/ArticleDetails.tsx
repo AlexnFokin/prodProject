@@ -18,7 +18,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar'
 import CalendarIcon from 'shared/assets/icons/calendar.svg'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import { Icon } from 'shared/ui/icon/Icon'
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article'
+import { ArticleBlock} from '../../model/types/article'
 import {
   ArticleCodeBlockComponent
 } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
@@ -28,6 +28,7 @@ import {
 import {
   ArticleTextBlockComponent
 } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent'
+import { ArticleBlockType } from 'entities/Article/model/consts/consts'
 
 interface ArticleDetailsProps {
   className?: string

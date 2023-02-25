@@ -1,5 +1,5 @@
 export { ArticlesDetailPageAsync as ArticlesDetailPage } from './ui/ArticlesDetailPage/ArticlesDetailPage.async'
-export { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema'
-export { ArticleDetailsPageRecommendationsSchema } from './model/types/articleDetailsPageRecommendationsSchema'
-export { ArticlesDetailsPageSchema } from './model/types/index'
+export type { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema'
+export type { ArticleDetailsPageRecommendationsSchema } from './model/types/articleDetailsPageRecommendationsSchema'
+export type { ArticlesDetailsPageSchema } from './model/types/index'
 export { getCanEditArticle } from './model/selectors/article'

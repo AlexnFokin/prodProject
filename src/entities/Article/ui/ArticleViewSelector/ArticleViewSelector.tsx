@@ -2,10 +2,10 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { memo } from 'react'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import cls from './ArticleViewSelector.module.scss'
-import { ArticleView } from '../../model/types/article'
 import { Icon } from 'shared/ui/icon/Icon'
 import gridIcon from 'shared/assets/icons/grid.svg'
 import listIcon from 'shared/assets/icons/list.svg'
+import { ArticleView } from '../../model/consts/consts'
 interface ArticleViewSelectorProps {
   className?: string
   view: ArticleView
