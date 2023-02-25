@@ -44,6 +44,7 @@ export function ListBox (props: ListBoxProps) {
 
   const optionsClasses = [mapDirectionClass[direction]]
 
+
   return (
     <HStack gap="4">
       {label && <span>{label}</span>}
@@ -54,7 +55,12 @@ export function ListBox (props: ListBoxProps) {
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button disabled={readonly} className={cls.trigger}>
+
+        <HListBox.Button
+          // @ts-ignore
+          disabled={readonly}
+          className={cls.trigger}
+        >
           <Button disabled={readonly}>
             {value ?? defaultValue}
           </Button>

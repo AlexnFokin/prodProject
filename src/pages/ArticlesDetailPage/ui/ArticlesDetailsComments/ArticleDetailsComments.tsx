@@ -1,7 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-
 import { useTranslation } from 'react-i18next'
-import { memo, useCallback } from 'react'
+import { memo, useCallback, Suspense } from 'react'
 import { Text, TextSize } from 'shared/ui/Text/Text'
 import cls from 'pages/ArticlesDetailPage/ui/ArticlesDetailPage/ArticlesDetailPage.module.scss'
 import AddCommentForm from 'features/AddCommentForm/ui/AddCommentForm/AddCommentForm'
@@ -45,7 +44,9 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
         title={t('Комментарии')}
         className={cls.commentsTitle}
       />
-      <AddCommentForm onSendComment={onSendComment}/>
+      <Suspense fallback="loading ...">
+        <AddCommentForm onSendComment={onSendComment}/>
+      </Suspense>
       <CommentList
         isLoading={isLoading}
         comments={comments}/>
