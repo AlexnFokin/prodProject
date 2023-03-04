@@ -13,5 +13,5 @@ export { ArticleList } from './ui/ArticleList/ArticleList'
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector'
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'
 export { ArticlesTypeTabs } from './ui/ArticlesTypeTabs/ArticlesTypeTabs'
-export { ArticleView } from '../Article/model/consts/consts'
-export { ArticleSortField } from '../Article/model/consts/consts'
+export { ArticleView, ArticleSortField } from './model/consts/consts'
+
