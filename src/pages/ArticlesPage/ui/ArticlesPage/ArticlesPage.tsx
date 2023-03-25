@@ -1,20 +1,20 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticlesPage.module.scss'
 import { memo, useCallback } from 'react'
 import {
   DynamicModuleLoader,
   ReducersList
-} from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { Page } from 'widgets/Page/Page'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Page } from '@/widgets/Page/Page'
 import {
   fetchNextArticlesPage
 } from '../../model/servicies/fetchNextArticlesPage/fetchNextArticlesPage'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import {
   ArticleInfinitieList
-} from 'pages/ArticlesPage/ui/ArticleInfiniteList/ArticleInfinitieList'
+} from '@/pages/ArticlesPage/ui/ArticleInfiniteList/ArticleInfinitieList'
 
 interface ArticlesPageProps {
   className?: string

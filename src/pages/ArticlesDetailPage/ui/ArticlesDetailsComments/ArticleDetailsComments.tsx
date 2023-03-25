@@ -1,20 +1,20 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback, Suspense } from 'react'
-import { Text, TextSize } from 'shared/ui/Text/Text'
-import cls from 'pages/ArticlesDetailPage/ui/ArticlesDetailPage/ArticlesDetailPage.module.scss'
-import AddCommentForm from 'features/AddCommentForm/ui/AddCommentForm/AddCommentForm'
-import { CommentList } from 'entities/Comment'
+import { Text, TextSize } from '@/shared/ui/Text/Text'
+import cls from '@/pages/ArticlesDetailPage/ui/ArticlesDetailPage/ArticlesDetailPage.module.scss'
+import AddCommentForm from '@/features/AddCommentForm/ui/AddCommentForm/AddCommentForm'
+import { CommentList } from '@/entities/Comment'
 import { useSelector } from 'react-redux'
 import {
   getArticleComments
-} from 'pages/ArticlesDetailPage/model/slice/articleDetailsCommentsSlice'
-import { getArticleCommentsIsLoading } from 'pages/ArticlesDetailPage/model/selectors/comments'
+} from '@/pages/ArticlesDetailPage/model/slice/articleDetailsCommentsSlice'
+import { getArticleCommentsIsLoading } from '@/pages/ArticlesDetailPage/model/selectors/comments'
 import {
   addCommentsForArticle
-} from 'pages/ArticlesDetailPage/model/servicies/addCommentsForArticle/addCommentsForArticle'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+} from '@/pages/ArticlesDetailPage/model/servicies/addCommentsForArticle/addCommentsForArticle'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import {
   fetchCommentsByArticleId
 } from '../../model/servicies/fetchCommentsByArticleId/fetchCommentsByArticleId'

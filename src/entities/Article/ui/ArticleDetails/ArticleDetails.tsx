@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleDetails.module.scss'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback, useEffect } from 'react'
-import { DynamicModuleLoader } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
+import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchArticleById } from '../../model/servicies/fetchArticleById/fetchArticleById'
 import { useSelector } from 'react-redux'
 import {
@@ -12,12 +12,12 @@ import {
   getArticleDetailsError,
   getArticleDetailsIsLoading
 } from '../../model/selectors/articleDetails'
-import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text'
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import CalendarIcon from 'shared/assets/icons/calendar.svg'
-import EyeIcon from 'shared/assets/icons/eye.svg'
-import { Icon } from 'shared/ui/icon/Icon'
+import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text/Text'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import CalendarIcon from '@/shared/assets/icons/calendar.svg'
+import EyeIcon from '@/shared/assets/icons/eye.svg'
+import { Icon } from '@/shared/ui/icon/Icon'
 import { ArticleBlock} from '../../model/types/article'
 import {
   ArticleCodeBlockComponent
@@ -27,8 +27,8 @@ import {
 } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import {
   ArticleTextBlockComponent
-} from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { ArticleBlockType } from 'entities/Article/model/consts/consts'
+} from '@/entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent'
+import { ArticleBlockType } from '@/entities/Article/model/consts/consts'
 
 interface ArticleDetailsProps {
   className?: string

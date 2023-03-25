@@ -1,20 +1,20 @@
 import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
-import { getArticles } from 'pages/ArticlesPage/model/slice/articlesPageSlice'
+import { getArticles } from '@/pages/ArticlesPage/model/slice/articlesPageSlice'
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
   getArticlesPageView
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors'
+} from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors'
 import { useSearchParams } from 'react-router-dom'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import {
   initArticlesPage
-} from 'pages/ArticlesPage/model/servicies/initArticlesPage/initArticlesPage'
-import { ArticleList } from 'entities/Article'
-import { Text, TextTheme } from 'shared/ui/Text/Text'
+} from '@/pages/ArticlesPage/model/servicies/initArticlesPage/initArticlesPage'
+import { ArticleList } from '@/entities/Article'
+import { Text, TextTheme } from '@/shared/ui/Text/Text'
 
 interface ArticleInfinitieListProps {
   className?: string

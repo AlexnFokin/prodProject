@@ -1,23 +1,23 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticlesDetailPage.module.scss'
 import { useTranslation } from 'react-i18next'
-import { ArticleDetails } from 'entities/Article'
+import { ArticleDetails } from '@/entities/Article'
 import { useParams } from 'react-router-dom'
-import { Text, TextTheme } from 'shared/ui/Text/Text'
+import { Text, TextTheme } from '@/shared/ui/Text/Text'
 import {
   DynamicModuleLoader,
   ReducersList
-} from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useSelector } from 'react-redux'
 import { getArticleCommentsError } from '../../model/selectors/comments'
 import { memo } from 'react'
-import { Page } from 'widgets/Page/Page'
+import { Page } from '@/widgets/Page/Page'
 import { articleDetailsPageReducer } from '../../model/slice'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
-import { ArticleReccomendationsList } from 'features/articleReccomendationsList'
+import { ArticleReccomendationsList } from '@/features/articleReccomendationsList'
 import {
   ArticleDetailsComments
-} from 'pages/ArticlesDetailPage/ui/ArticlesDetailsComments/ArticleDetailsComments'
+} from '@/pages/ArticlesDetailPage/ui/ArticlesDetailsComments/ArticleDetailsComments'
 
 interface ArticlesDetailPageProps {
   className?: string

@@ -1,10 +1,10 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
-import { StateSchema } from 'app/providers/StoreProvider'
-import { Article } from 'entities/Article'
-import { ArticleDetailsPageRecommendationsSchema } from 'pages/ArticlesDetailPage'
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { Article } from '@/entities/Article'
+import { ArticleDetailsPageRecommendationsSchema } from '@/pages/ArticlesDetailPage'
 import {
   fetchArticleRecommendations
-} from 'pages/ArticlesDetailPage/model/servicies/fetchArticleRecommendations/fetchArticleRecommendations'
+} from '@/pages/ArticlesDetailPage/model/servicies/fetchArticleRecommendations/fetchArticleRecommendations'
 
 const recommendationsAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id

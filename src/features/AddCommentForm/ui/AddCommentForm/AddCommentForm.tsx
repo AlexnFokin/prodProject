@@ -1,17 +1,17 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './AddCommentForm.module.scss'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
-import { Input } from 'shared/ui/Input/Input'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { Input } from '@/shared/ui/Input/Input'
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { addCommentFormAction, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'
 import {
   DynamicModuleLoader,
   ReducersList
-} from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 export interface AddCommentFormProps {
   className?: string

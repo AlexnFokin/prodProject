@@ -6,7 +6,7 @@
     "target": "es5",
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
     "jsx": "react-jsx",
     "allowJs": true,
