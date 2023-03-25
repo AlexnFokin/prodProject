@@ -1,12 +1,12 @@
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import React, {
     memo, ReactNode, useCallback, useEffect,
 } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/app/providers/ThemeProvider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
 
 interface DrawerProps {
     className?: string;
@@ -50,17 +50,23 @@ export const DrawerContent = memo((props: DrawerProps) => {
     };
 
     const bind = Gesture.useDrag(
-      (x) => {
-          if (x.movement[1] < -70) x.cancel();
+      ({
+          last,
+          velocity: [, vy],
+          direction: [, dy],
+          movement: [, my],
+          cancel,
+      }) => {
+          if (my < -70) cancel();
 
-          if (x.last) {
-              if (x.movement[1] > height * 0.5 || (x.velocity[1] > 0.5 && x.direction[1] > 0)) {
+          if (last) {
+              if (my > height * 0.5 || (vy > 0.5 && dy > 0)) {
                   close();
               } else {
                   openDrawer();
               }
           } else {
-              api.start({ y: x.movement[1], immediate: true });
+              api.start({ y: my, immediate: true });
           }
       },
       {
@@ -72,9 +78,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
         return null;
     }
 
-    const display = y.to(function (py) {
-        return py < height ? 'block' : 'none'
-    });
+    const display = y.to((py) => (py < height ? 'block' : 'none'));
 
     return (
       <Portal>
@@ -92,7 +96,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
     );
 });
 
-export const Drawer = memo((props: DrawerProps) => {
+const DrawerAsync = (props: DrawerProps) => {
     const { isLoaded } = useAnimationLibs();
 
     if (!isLoaded) {
@@ -100,4 +104,12 @@ export const Drawer = memo((props: DrawerProps) => {
     }
 
     return <DrawerContent {...props} />;
-});
+};
+
+export const Drawer = (props: DrawerProps) => {
+    return (
+      <AnimationProvider>
+          <DrawerAsync {...props} />
+      </AnimationProvider>
+    );
+};
